@@ -4,14 +4,14 @@ DATE=2023-09-09
 
 using loops install any no of packages
 --------------------------------------
-sh 13-install-packages.sh git mysql gcc postfix net-tools
+sh 13-install-packages.sh git mysql gcc postfix net-tools               these are all the inputs to file
 
 $# --> no of args
-$@ --> all args
+$@ --> all args passed to shell script
 
-1. check root user or not
-2. if root user
-		check package is already installed or not
+1. check root user or not			syntax $(id -u)
+2. if root user					if [ $(id -u) -eq 0 ]
+		check package is already installed or not          to check it syntax "yum list installed "appname"" and use exit status if [ $? -eq 0] installed  
 			if installed skip it and tell user, already installed
 			if not installe, install it
 			validate it
